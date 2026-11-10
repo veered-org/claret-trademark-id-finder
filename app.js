@@ -196,7 +196,7 @@ function renderPicks() {
   }
   $("picks").innerHTML = g.map(([c, ps]) => `<div class="pc"><div class="h"><b>Class ${c}</b><span>${esc(CLS[c] || "")}</span>
       <button class="btn sm alt" data-copy="${c}">Copy</button></div>
-      <div class="t">${ps.map((p) => esc(textOf(p)).replace(/\{([^}]*)\}/g, "<i title=\"fill this in\">{$1}</i>") + `<button class="x" data-del="${esc(p.id)}" title="Remove">×</button>`).join("; ")}</div></div>`).join("");
+      ${ps.map((p) => `<div class="t">${esc(textOf(p)).replace(/\{([^}]*)\}/g, "<i title=\"fill this in\">{$1}</i>")}<span class="id">${esc(p.id)}</span><button class="x" data-del="${esc(p.id)}" title="Remove">×</button></div>`).join("")}</div>`).join("");
   $("pickfoot").hidden = false;
   const blanks = picks.some((p) => /\{/.test(textOf(p)));
   $("tot").textContent = `${g.length} class${g.length > 1 ? "es" : ""} · USPTO filing fee $${(g.length * FEE).toLocaleString()} ($${FEE} per class)` + (blanks ? " · fill in the red blanks" : "");
