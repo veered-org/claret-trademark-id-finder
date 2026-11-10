@@ -27,10 +27,10 @@ a{color:var(--accent)}
 .bar .sp{flex:1}
 .bar a{color:var(--bar-ink);opacity:.85;text-decoration:none;font-size:13px}
 .bar a:hover{opacity:1;text-decoration:underline}
-main{max-width:1180px;margin:0 auto;padding:22px 16px 60px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
-@media (max-width:900px){main{grid-template-columns:1fr}}
+main.app{max-width:1180px;margin:0 auto;padding:22px 16px 60px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
+@media (max-width:900px){main.app{grid-template-columns:1fr}}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
-h1{font-size:22px;margin:0 0 4px;font-weight:600;color:var(--accent)}
+.card h1{font-size:22px;margin:0 0 4px;font-weight:600;color:var(--accent)}
 .sub{color:var(--muted);margin:0 0 14px;font-size:14px}
 textarea{width:100%;min-height:84px;border:1px solid #C9CED8;border-radius:10px;padding:10px 12px;resize:vertical;background:#fff;font-size:15px}
 textarea:focus,input:focus{outline:2px solid var(--hi);outline-offset:1px}
@@ -71,7 +71,7 @@ aside h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(-
 .pc .x:hover{color:var(--accent)}
 .tot{font-size:13px;color:var(--muted);margin:10px 0 0}
 .copied{color:var(--ok);font-size:12.5px}
-footer{max-width:1180px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:12.5px}
+footer.foot{max-width:1180px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:12.5px}
 </style>
 </head>
 <body>
@@ -83,7 +83,7 @@ footer{max-width:1180px;margin:0 auto;padding:0 16px 30px;color:var(--muted);fon
   <a href="https://github.com/veered-org/claret-trademark-id-finder" target="_blank" rel="noopener">Source code</a>
 <!-- /BRAND -->
 </header>
-<main>
+<main class="app">
   <section>
     <div class="card">
       <h1>What do you sell?</h1>
@@ -111,7 +111,7 @@ footer{max-width:1180px;margin:0 auto;padding:0 16px 30px;color:var(--muted);fon
     </div>
   </aside>
 </main>
-<footer><span id="ver"></span> Not legal advice. The USPTO examiner has the final word on every identification.</footer>
+<footer class="foot"><span id="ver"></span> Not legal advice. The USPTO examiner has the final word on every identification.</footer>
 <script type="module" src="app.js?v=1"></script>
 </body>
 </html>
